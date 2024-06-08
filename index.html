@@ -1,6 +1,15 @@
-<input name="email" type="text" placeholder="Email" id="email" />
-<input name="password" type="password" id="password" placeholder="Password" />
-<textarea name="text" id="data" placeholder="Data"></textarea>
+<p class="email">
+    <input name="email" type="text" placeholder="Email" id="email" class="validate[required,custom[email],length[0,100]] feedback-input"/>
+</p>
+      
+<p class="password">
+    <input name="password" type="password" id="password" placeholder="Password" class="validate[required] feedback-input" />
+</p>
+      
+<p class="text">
+    <textarea name="text" class="validate[required] feedback-input" id="comment" placeholder="Comment"></textarea>
+</p>
+
 <input type="button" value="SEND" id="button-blue" onclick="init()" />
 
 <script>
