@@ -108,17 +108,16 @@
         window.alert("Done create MDT");
     }
 
-    //         firstName-lastName-steam:hex,
-
-    const splitDataField = (data) => {
-        const datas = data.split(",");
+   const splitDataField = (data) => {
+        let datas = data.split("\n").join(",");
+        datas = datas.split(",");
         var a = [];
         for (const acc of datas) {
             let x = acc.split("-");
             a.push({
-                firstName: x[0],
-                lastName: x[1],
-                steamHex: x[2]
+                firstName: x[0].trim(),
+                lastName: x[1].trim(),
+                steamHex: x[2].trim()
             })
         }
 
