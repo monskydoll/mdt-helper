@@ -33,8 +33,6 @@
 
     const createAccount = async ({ token, data }) => {
         window.alert("Start Create Account")
-        console.log(token);
-        console.log(data);
         let dataList = data;
 
         for (const data of dataList) {
@@ -46,10 +44,8 @@
                     "roleId": "4"
                 },
                 "password": "emsidp",
-                "email": `${data.firstName.toLowerCase()}${data.lastName.toLowerCase()}@indopride.id`
+                "email": `${data.firstName.toLowerCase().replace(" ","")}${data.lastName.toLowerCase().replace(" ","")}@indopride.id`
             });
-
-            console.log(body);
 
             fetch(herokuUrl + "https://mokes.indopride.id/api/users/create", {
                 method: 'POST',
@@ -78,7 +74,6 @@
                 })
                 .then(data => {
                     if (data) {
-                        console.log('Response:', data);
                     }
                 })
                 .catch(error => {
